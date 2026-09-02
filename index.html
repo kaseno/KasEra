@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KasEra｜標籤申請管理</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">K</span><div><strong>KasEra</strong><small>標籤申請管理</small></div></div>
+    <nav>
+      <a class="active" href="#dashboard">總覽</a>
+      <a href="#applications">新品編申請</a>
+      <a href="#specs">標籤規格書</a>
+      <a href="#label-app">標籤申請單</a>
+      <a href="#production">製作追蹤</a>
+    </nav>
+    <div class="sidebar-foot"><span class="status-dot"></span> 系統運作中<br><small>最後同步：今天 09:42</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><p class="eyebrow">WORKFLOW CONTROL</p><h1>標籤申請工作台</h1></div><div class="top-actions"><button class="icon-btn">⌕</button><button class="user-chip">筱菁 <span>⌄</span></button></div></header>
+    <section id="dashboard" class="content">
+      <div class="welcome"><div><p class="eyebrow">TUESDAY, SEPTEMBER 1, 2026</p><h2>早安，筱菁</h2><p>掌握每一件標籤案件的進度，確保核准後才進入製作。</p></div><button class="primary" onclick="openModal('new-product')">＋ 新增新品編申請</button></div>
+      <div class="stats"><div class="stat-card"><span>待覆核新品編</span><strong>06</strong><i class="amber">需要處理</i></div><div class="stat-card"><span>待確認規格書</span><strong>03</strong><i class="blue">進行中</i></div><div class="stat-card"><span>待核准標籤申請</span><strong>08</strong><i class="violet">待簽核</i></div><div class="stat-card"><span>製作中</span><strong>12</strong><i class="green">已核准</i></div></div>
+      <div class="grid-two"><section class="panel"><div class="panel-head"><div><h3>流程進度</h3><p>所有案件目前所處階段</p></div><button class="text-btn">查看全部 →</button></div><div class="flow"><div class="flow-step done"><b>01</b><span>新品編申請</span><em>24 件</em></div><div class="connector done"></div><div class="flow-step active"><b>02</b><span>資料覆核</span><em>06 件</em></div><div class="connector"></div><div class="flow-step"><b>03</b><span>規格書</span><em>03 件</em></div><div class="connector"></div><div class="flow-step"><b>04</b><span>標籤申請</span><em>08 件</em></div><div class="connector"></div><div class="flow-step"><b>05</b><span>製作</span><em>12 件</em></div></div></section><section class="panel"><div class="panel-head"><div><h3>案件提醒</h3><p>需要你關注的事項</p></div></div><div class="reminder"><span class="alert amber-bg">!</span><div><b>有 6 件新品編申請待覆核</b><small>最早提交於 2 小時前</small></div><span>›</span></div><div class="reminder"><span class="alert red-bg">!</span><div><b>2 件規格書即將逾期</b><small>請於今日 17:00 前確認</small></div><span>›</span></div></section></div>
+      <section class="panel recent"><div class="panel-head"><div><h3>最近案件</h3><p>依更新時間排序</p></div><div><button class="filter">全部狀態⌄</button><button class="text-btn">案件管理 →</button></div></div><table><thead><tr><th>案件編號</th><th>產品名稱</th><th>申請單位</th><th>目前階段</th><th>更新時間</th><th></th></tr></thead><tbody><tr><td><b>LB-20260901-008</b></td><td>桂花烏龍茶</td><td>商品部</td><td><span class="pill amber-pill">新品編覆核</span></td><td>今天 09:42</td><td>•••</td></tr><tr><td><b>LB-20260831-017</b></td><td>低鈉醬油 500ml</td><td>食品部</td><td><span class="pill blue-pill">規格書確認</span></td><td>昨天 16:20</td><td>•••</td></tr><tr><td><b>LB-20260830-004</b></td><td>植萃洗手乳</td><td>日用品部</td><td><span class="pill violet-pill">標籤申請核准</span></td><td>08/30 14:08</td><td>•••</td></tr></tbody></table></section>
+    </section>
+  </main>
+  <div id="modal" class="modal" aria-hidden="true"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><p class="eyebrow">STEP 01 / NEW PRODUCT</p><h2>新增新品編申請</h2><p class="modal-desc">填寫完成後送出覆核，通過後才會產出標籤規格書。</p><form onsubmit="submitForm(event)"><label>產品名稱<input required placeholder="請輸入產品名稱" /></label><div class="form-row"><label>規格／容量<input required placeholder="例如：500ml" /></label><label>申請單位<select><option>商品部</option><option>食品部</option><option>日用品部</option></select></label></div><label>申請說明<textarea placeholder="補充產品、標示或上市資訊"></textarea></label><div class="modal-foot"><button type="button" class="secondary" onclick="closeModal()">取消</button><button class="primary" type="submit">送出覆核</button></div></form></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
